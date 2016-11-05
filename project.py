@@ -15,7 +15,7 @@ def main():
     labelProperty = dict(fontweight='bold',fontsize='12')
     pylab.xlabel('Years', labelProperty)
     pylab.ylabel('Pregnancy', labelProperty)
-    legends = ('Average total time')
+    legends = ('Average total time',)
     pylab.legend(legends,
      loc='upper left', shadow=True, fancybox=True)
     pylab.xlim(2533,2555)
