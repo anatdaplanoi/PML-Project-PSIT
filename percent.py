@@ -2,7 +2,7 @@
 import pylab
 def main():
     """This function is open file"""
-    read = open("E:/แอล/KMITL/PSIT/Project/alldata.txt", "r")
+    read = open("/Users/porpiraya/Desktop/alldata.txt", "r")
     da_lis = []
     da_year = []
     da_per_a = []
