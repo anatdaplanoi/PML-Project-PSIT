@@ -2,7 +2,7 @@
 import pylab
 def main():
     """This function is open file"""
-    read = open("C:/Users/Aal/Desktop/project/data.txt", "r")
+    read = open("C:/Users/Planoi/Desktop/project/project/data.txt", "r")
     da_lis = []
     da_year = []
     da_amount = []
@@ -18,7 +18,7 @@ def main():
     labelProperty = dict(fontweight='bold',fontsize='12')
     pylab.xlabel('Years', labelProperty)
     pylab.ylabel('Pregnancy', labelProperty)
-    legends = ('Average total time',)
+    legends = ('Total of Teenage Pregnancy',)
     pylab.legend(legends,
      loc='upper left', shadow=True, fancybox=True)
     pylab.xlim(2533,2555)
