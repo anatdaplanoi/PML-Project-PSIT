@@ -19,10 +19,7 @@ def bar():
         da_per_a.append(float(da_lis[i][4]))
         da_per_b.append(float(da_lis[i][5]))
     plt.bar(da_year, da_per_b, align='center')
-
     plt.bar(da_year, da_per_b, color='g', align='center')
-
-
     plt.title(' bar graph')
     plt.ylabel('percentage teenage pregnancy of the second period')
     plt.xlabel('Years')
