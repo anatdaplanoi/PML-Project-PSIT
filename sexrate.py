@@ -25,7 +25,7 @@ def main():
         'Sex rate of second years vocational',)
     pylab.legend(legends,
      loc='upper left', shadow=True, fancybox=True)
-    pylab.xlim(2547,2555)
+    pylab.xlim(2546,2556)
     pylab.xticks(da_year)
     pylab.grid(True)
     pylab.show()
