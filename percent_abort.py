@@ -1,3 +1,4 @@
+"""This program is shows graph about A​nalysis of teenage pregnancy"""
 import numpy as np
 import matplotlib.pyplot as plt
 read = open("C:/Users/Planoi/Desktop/project/PML-Project-PSIT-master/ผู้ให้บริการยุติการตั้งครรภ์.txt", "r")
@@ -44,6 +45,7 @@ ax.set_xticklabels( ('abort by public health', 'abort by not public health', 'un
 ax.legend( (rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555') )
 
 def autolabel(rects):
+    """The graph shows the provider to terminate the pregnancy."""
     for rect in rects:
         h = rect.get_height()
         ax.text(rect.get_x()+rect.get_width()/2., 1.05*h, '%.1f'%float(h),
