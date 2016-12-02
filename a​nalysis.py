@@ -1,7 +1,7 @@
 """This program is shows graph about A​nalysis of teenage pregnancy"""
 import pylab
 def main():
-    """This function is open file"""
+    """The graph shows the rate of maternity"""
     read = open("C:/Users/Planoi/Desktop/project/project/data.txt", "r")
     da_lis = []
     da_year = []
