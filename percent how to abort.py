@@ -1,9 +1,10 @@
 """This program is shows graph about Analysis of teenage pregnancy"""
 import numpy as np
 import matplotlib.pyplot as plt
+
 def main():
-    """..."""
-    read = open("E:/แอล/KMITL/PSIT/Project/PML-Project-PSIT/วิธีการยุติการตั้งครรภ์ที่ใช้.txt", "r")
+    """The graph shows the method used to terminate a pregnancy."""
+    read = open("/Users/porpiraya/Desktop/data_percenthowtoabort.txt", "r")
     ind = np.arange(7)  # the x locations for the groups
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -25,9 +26,8 @@ def main():
     rects3 = ax.bar(ind + 0.24*2, year_2555, 0.24, color='b')
     ax.set_ylabel('way to abort(%)')
     ax.set_xticks(ind + 0.36)
-    ax.set_xticklabels(('vacuum aspiration', 'Pill', 'Pessary', 'Curettage', 
-        'solid into the vagina', 'liquid into the vagina', 
-        'Squeeze the belly'))
+    ax.set_xticklabels(('vacuum aspiration', 'Pill', 'Pessary', 'Curettage',\
+        'solid into the vagina', 'liquid into the vagina', 'Squeeze the belly'))
     ax.legend((rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555'))
     autolabel(rects1, ax)
     autolabel(rects2, ax)
@@ -35,9 +35,10 @@ def main():
     plt.show()
 
 def autolabel(rects, ax):
-    """The graph shows the method used to terminate a pregnancy."""
+    """Assign a name to the bar chart in the middle."""
     for i in rects:
         high = i.get_height()
-        ax.text(i.get_x() + i.get_width()/2., 1.00*high, '%.1f'%float(high), 
+        ax.text(i.get_x() + i.get_width()/2, 1.00*high, '%.1f'%float(high),\
             ha='center', va='bottom')
+
 main()
