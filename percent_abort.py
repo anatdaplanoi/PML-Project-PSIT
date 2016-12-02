@@ -1,9 +1,10 @@
 """This program is shows graph about A​nalysis of teenage pregnancy"""
 import numpy as np
 import matplotlib.pyplot as plt
+
 def main():
-    """..."""
-    read = open("E:/แอล/KMITL/PSIT/Project/PML-Project-PSIT/ผู้ให้บริการยุติการตั้งครรภ์.txt", "r")
+    """The graph shows the provider to terminate the pregnancy."""
+    read = open("/Users/porpiraya/Desktop/data_percentabort.txt", "r")
     ind = np.arange(4)  # the x locations for the groups
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -25,7 +26,8 @@ def main():
     rects3 = ax.bar(ind + 0.24*2, year_2555, 0.24, color='b')
     ax.set_ylabel('abort(%)')
     ax.set_xticks(ind + 0.36)
-    ax.set_xticklabels(('abort by public health', 'abort by not public health', 'unknow', 'abort by oneself'))
+    ax.set_xticklabels(('abort by public health', 'abort by not public health',\
+        'unknow', 'abort by oneself'))
     ax.legend((rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555'))
     autolabel(rects1, ax)
     autolabel(rects2, ax)
@@ -33,8 +35,10 @@ def main():
     plt.show()
 
 def autolabel(rects, ax):
-    """..."""
+    """Assign a name to the bar chart in the middle."""
     for i in rects:
         high = i.get_height()
-        ax.text(i.get_x() + i.get_width()/2., 1.05*high, '%.1f'%float(high), ha='center', va='bottom')
+        ax.text(i.get_x() + i.get_width()/2., 1.05*high, '%.1f'%float(high), ha='center',\
+            va='bottom')
+
 main()
