@@ -1,7 +1,7 @@
 """This program is shows graph about percentage teenage pregnancy of the second period."""
 import pylab
 def main():
-    """This function is open file"""
+    """The graph shows the sex rate"""
     read = open("/Users/porpiraya/Desktop/alldata.txt", "r")
     da_lis = []
     da_year = []
