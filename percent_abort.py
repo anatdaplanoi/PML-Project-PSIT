@@ -38,7 +38,7 @@ def autolabel(rects, ax):
     """Assign a name to the bar chart in the middle."""
     for i in rects:
         high = i.get_height()
-        ax.text(i.get_x() + i.get_width()/2., 1.00*high, '%.1f'%float(high), ha='center',\
+        ax.text(i.get_x() + i.get_width()/2, 1.00*high, '%.1f'%float(high), ha='center',\
             va='bottom')
 
 main()
