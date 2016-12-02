@@ -1,65 +1,43 @@
 """This program is shows graph about Analysis of teenage pregnancy"""
 import numpy as np
 import matplotlib.pyplot as plt
-read = open("C:/Users/Planoi/Desktop/project/PML-Project-PSIT-master/วิธีการยุติการตั้งครรภ์ที่ใช้.txt", "r")
-N = 7
-ind = np.arange(N)  # the x locations for the groups
-width = 0.27       # the width of the bars
+def main():
+    """..."""
+    read = open("E:/แอล/KMITL/PSIT/Project/PML-Project-PSIT/วิธีการยุติการตั้งครรภ์ที่ใช้.txt", "r")
+    ind = np.arange(7)  # the x locations for the groups
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    da_lis = []
+    year_2542 = []
+    year_2554 = []
+    year_2555 = []
+    count = 0
+    for i in read:
+        if count > 1:
+            da_lis.append(i.split())
+        count += 1
+    for i in range(1, 8):
+        year_2542.append(float(da_lis[0][i]))
+        year_2554.append(float(da_lis[1][i]))
+        year_2555.append(float(da_lis[2][i]))
+    rects1 = ax.bar(ind, year_2542, 0.24, color='r')
+    rects2 = ax.bar(ind + 0.24, year_2554, 0.24, color='g')
+    rects3 = ax.bar(ind + 0.24*2, year_2555, 0.24, color='b')
+    ax.set_ylabel('way to abort(%)')
+    ax.set_xticks(ind + 0.36)
+    ax.set_xticklabels(('vacuum aspiration', 'Pill', 'Pessary', 'Curettage', 
+        'solid into the vagina', 'liquid into the vagina', 
+        'Squeeze the belly'))
+    ax.legend((rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555'))
+    autolabel(rects1, ax)
+    autolabel(rects2, ax)
+    autolabel(rects3, ax)
+    plt.show()
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
-da_lis = []
-year_2542 = []
-year_2554 = []
-year_2555 = []
-
-count = 0
-for i in read:
-    if count != 0:
-        da_lis.append(i.split())
-    count = 1
-year_2542.append(float(da_lis[1][1]))
-year_2542.append(float(da_lis[1][2]))
-year_2542.append(float(da_lis[1][3]))
-year_2542.append(float(da_lis[1][4]))
-year_2542.append(float(da_lis[1][5]))
-year_2542.append(float(da_lis[1][6]))
-year_2542.append(float(da_lis[1][7]))
-year_2554.append(float(da_lis[2][1]))
-year_2554.append(float(da_lis[2][2]))
-year_2554.append(float(da_lis[2][3]))
-year_2554.append(float(da_lis[2][4]))
-year_2554.append(float(da_lis[2][5]))
-year_2554.append(float(da_lis[2][6]))
-year_2554.append(float(da_lis[2][7]))
-year_2555.append(float(da_lis[3][1]))
-year_2555.append(float(da_lis[3][2]))
-year_2555.append(float(da_lis[3][3]))
-year_2555.append(float(da_lis[3][4]))
-year_2555.append(float(da_lis[3][5]))
-year_2555.append(float(da_lis[3][6]))
-year_2555.append(float(da_lis[3][7]))
-yvals = year_2542
-rects1 = ax.bar(ind, yvals, width, color='r')
-zvals = year_2554
-rects2 = ax.bar(ind+width, zvals, width, color='g')
-kvals = year_2555
-rects3 = ax.bar(ind+width*2, kvals, width, color='b')
-
-ax.set_ylabel('way to abort(%)')
-ax.set_xticks(ind+width)
-ax.set_xticklabels( ('Abortion by vacuum aspiration', 'Pill', 'Pessary', 'Curettage', 'Put the solid into the vagina', 'Put the liquid into the vagina', 'Squeeze the abdominal surface') )
-ax.legend( (rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555') )
-
-def autolabel(rects):
+def autolabel(rects, ax):
     """The graph shows the method used to terminate a pregnancy."""
-    for rect in rects:
-        h = rect.get_height()
-        ax.text(rect.get_x()+rect.get_width()/2., 1.05*h, '%.1f'%float(h),
-                ha='center', va='bottom')
-
-autolabel(rects1)
-autolabel(rects2)
-autolabel(rects3)
-
-plt.show()
+    for i in rects:
+        high = i.get_height()
+        ax.text(i.get_x() + i.get_width()/2., 1.00*high, '%.1f'%float(high), 
+            ha='center', va='bottom')
+main()
