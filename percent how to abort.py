@@ -1,3 +1,4 @@
+"""This program is shows graph about Analysis of teenage pregnancy"""
 import numpy as np
 import matplotlib.pyplot as plt
 read = open("C:/Users/Planoi/Desktop/project/PML-Project-PSIT-master/วิธีการยุติการตั้งครรภ์ที่ใช้.txt", "r")
@@ -51,6 +52,7 @@ ax.set_xticklabels( ('Abortion by vacuum aspiration', 'Pill', 'Pessary', 'Curett
 ax.legend( (rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555') )
 
 def autolabel(rects):
+    """The graph shows the method used to terminate a pregnancy."""
     for rect in rects:
         h = rect.get_height()
         ax.text(rect.get_x()+rect.get_width()/2., 1.05*h, '%.1f'%float(h),
