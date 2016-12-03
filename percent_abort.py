@@ -1,10 +1,10 @@
-"""This program is shows graph about A​nalysis of teenage pregnancy"""
+"""This program is shows graph percent of abortion"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def main():
+def graph_abort():
     """The graph shows the provider to terminate the pregnancy."""
-    read = open("/Users/porpiraya/Desktop/data_percentabort.txt", "r")
+    read = open("C:/Users/Planoi/Desktop/project/project/PML-Project-PSIT/ผู้ให้บริการยุติการตั้งครรภ์.txt", "r")
     ind = np.arange(4)  # the x locations for the groups
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -41,4 +41,4 @@ def autolabel(rects, ax):
         ax.text(i.get_x() + i.get_width()/2, 1.00*high, '%.1f'%float(high), ha='center',\
             va='bottom')
 
-main()
+graph_abort()
