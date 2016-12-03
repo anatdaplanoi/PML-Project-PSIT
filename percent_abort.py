@@ -27,7 +27,7 @@ def graph_abort():
     ax.set_ylabel('abort(%)')
     ax.set_xticks(ind + 0.36)
     ax.set_xticklabels(('abort by public health', 'abort by not public health',\
-        'unknow', 'abort by oneself'))
+        'unknow', 'self abortion'))
     ax.legend((rects1[0], rects2[0], rects3[0]), ('2542', '2554', '2555'))
     autolabel(rects1, ax)
     autolabel(rects2, ax)

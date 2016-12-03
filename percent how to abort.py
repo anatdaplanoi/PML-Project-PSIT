@@ -1,10 +1,10 @@
-"""This program is shows graph about Analysis of teenage pregnancy"""
+"""This program is shows graph about abortion methods"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def main():
+def show_graph():
     """The graph shows the method used to terminate a pregnancy."""
-    read = open("/Users/porpiraya/Desktop/data_percenthowtoabort.txt", "r")
+    read = open("C:/Users/Planoi/Desktop/project/project/PML-Project-PSIT/วิธีการยุติการตั้งครรภ์ที่ใช้.txt", "r")
     ind = np.arange(7)  # the x locations for the groups
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -24,7 +24,7 @@ def main():
     rects1 = ax.bar(ind, year_2542, 0.24, color='r')
     rects2 = ax.bar(ind + 0.24, year_2554, 0.24, color='g')
     rects3 = ax.bar(ind + 0.24*2, year_2555, 0.24, color='b')
-    ax.set_ylabel('way to abort(%)')
+    ax.set_ylabel('abortion methods(%)')
     ax.set_xticks(ind + 0.36)
     ax.set_xticklabels(('vacuum aspiration', 'Pill', 'Pessary', 'Curettage',\
         'solid into the vagina', 'liquid into the vagina', 'Squeeze the belly'))
@@ -41,4 +41,4 @@ def autolabel(rects, ax):
         ax.text(i.get_x() + i.get_width()/2, 1.00*high, '%.1f'%float(high),\
             ha='center', va='bottom')
 
-main()
+show_graph()
